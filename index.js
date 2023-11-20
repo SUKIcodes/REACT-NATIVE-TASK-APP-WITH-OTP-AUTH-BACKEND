@@ -21,9 +21,9 @@ app.use(cookieParser());
 
 app.use("/api/v1", router);
 
-app.get = (req, res) => {
+app.get("/", (req, res) => {
   res.send("WORKING");
-};
+});
 
 mongoose
   .connect(process.env.MONGO_URL)
