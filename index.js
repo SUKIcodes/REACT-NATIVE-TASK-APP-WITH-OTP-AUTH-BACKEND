@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
   res.send("WORKING");
 });
 
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on http://localhost:${process.env.PORT}`);
+});
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
@@ -33,7 +37,3 @@ mongoose
   .catch((error) => {
     console.log(error.message);
   });
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server listening on http://localhost:${process.env.PORT}`);
-});
